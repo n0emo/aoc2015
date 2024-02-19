@@ -41,5 +41,6 @@ main = do
 
   putStr "Ribbon: "
   print ribbon
+  hClose file
   where
     eval f boxes = sum $ map (f . parseBox) boxes
