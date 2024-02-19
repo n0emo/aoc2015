@@ -1,3 +1,4 @@
 *.o
 *.hi
 lisp_*
+nomath
