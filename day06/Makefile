@@ -1,6 +1,6 @@
-light: main.hs
-	ghc -O3 main.hs -o light
+main: main.hs
+	ghc -O3 main.hs -o main
 
-run: light
-	./light
+run: main
+	./main
 

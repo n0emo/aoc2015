@@ -1,6 +1,6 @@
-houses: main.hs
-	ghc main.hs -o houses
+main: main.hs
+	ghc main.hs -o main
 
-run: houses
-	./houses
+run: main
+	./main
 

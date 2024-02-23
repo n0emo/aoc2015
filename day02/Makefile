@@ -1,6 +1,6 @@
-nomath: main.hs
-	ghc main.hs -o nomath
+main: main.hs
+	ghc main.hs -o main
 
-run: nomath
-	./nomath
+run: main
+	./main
 

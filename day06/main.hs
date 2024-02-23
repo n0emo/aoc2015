@@ -97,11 +97,17 @@ main :: IO ()
 main = do
   file <- openFile "input.txt" ReadMode
   contents <- hGetContents file
-  let inputLines = lines contents
-  let acts = map (actGrid . parseAct) inputLines
-  let result1 = countLightsPartOne $ applyActs applyActPartOne acts startingGridPartOne
-  let result2 = countLightsPartTwo $ applyActs applyActPartTwo acts startingGridPartTwo
+  let input = lines contents
+
+  let acts = map (actGrid . parseAct) input
+
   putStr "Count (part 1): "
-  print result1
+  print $
+    countLightsPartOne $
+      applyActs applyActPartOne acts startingGridPartOne
   putStr "Brightness (part 2): "
-  print result2
+  print $
+    countLightsPartTwo $
+      applyActs applyActPartTwo acts startingGridPartTwo
+
+  hClose file

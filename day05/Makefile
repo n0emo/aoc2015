@@ -1,6 +1,6 @@
-nices: main.hs
-	ghc main.hs -o nices
+main: main.hs
+	ghc main.hs -o main
 
-run: nices
-	./nices
+run: main
+	./main
 

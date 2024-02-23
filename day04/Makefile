@@ -1,6 +1,6 @@
-hash: main.hs
-	ghc main.hs -o hash
+main: main.hs
+	ghc main.hs -o main
 
-run: hash
-	./hash
+run: main
+	./main
 

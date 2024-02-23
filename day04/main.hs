@@ -15,7 +15,10 @@ main :: IO ()
 main = do
   file <- openFile "input.txt" ReadMode
   input <- hGetLine file
+
   putStr "Mined number with 5 zeros: "
   print $ mineFirstNum 5 input
   putStr "Mined number with 6 zeros: "
   print $ mineFirstNum 6 input
+
+  hClose file

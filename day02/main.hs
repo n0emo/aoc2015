@@ -32,15 +32,13 @@ main :: IO ()
 main = do
   file <- openFile "input.txt" ReadMode
   contents <- hGetContents file
+
   let boxes = lines contents
-  let paper = eval evalBoxPaper boxes
-  let ribbon = eval evalBoxRibbon boxes
+  let eval f boxes = sum $ map (f . parseBox) boxes
 
   putStr "Wrapping paper: "
-  print paper
-
+  print $ eval evalBoxPaper boxes
   putStr "Ribbon: "
-  print ribbon
+  print $ eval evalBoxRibbon boxes
+
   hClose file
-  where
-    eval f boxes = sum $ map (f . parseBox) boxes

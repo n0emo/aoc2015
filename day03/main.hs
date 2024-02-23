@@ -55,8 +55,10 @@ main :: IO ()
 main = do
   file <- openFile "input.txt" ReadMode
   route <- hGetContents file
+
   putStr "One Santa: "
   print $ countHousesSanta route
   putStr "Santa and Robo-Santa: "
   print $ countHousesSantaAndRobo route
+
   hClose file

@@ -1,8 +1,4 @@
+*.txt
 *.o
 *.hi
-lisp_*
-nomath
-houses
-hash
-nices
-light
+main

@@ -34,8 +34,10 @@ main = do
   file <- openFile "input.txt" ReadMode
   contents <- hGetContents file
   let input = lines contents
+
   putStr "Nice string (part one): "
   print $ count isNiceStringPartOne input
   putStr "Nice string (part two): "
   print $ count isNiceStringPartTwo input
+
   hClose file
